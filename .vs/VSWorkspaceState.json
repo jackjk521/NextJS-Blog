@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\nextjs-blog"
+    "\\nextjs-blog",
+    "\\nextjs-blog\\pages",
+    "\\nextjs-blog\\pages\\posts"
   ],
-  "SelectedNode": "\\nextjs-blog",
   "PreviewInSolutionExplorer": false
 }
