@@ -5,6 +5,8 @@ export default function FirstPost() {
         <div>
                 
             <h1>First Post</h1>
+
+            <h3>So excited!! *Kevin Hart's voice* </h1>
         </div> 
     ); 
 }
