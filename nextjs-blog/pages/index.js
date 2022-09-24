@@ -1,12 +1,21 @@
 import Head from 'next/head'
 import Link from 'next/link';
+import Script from 'next/script'
 
 export default function Home() {
-  return (
+    return (
+
     <div className="container">
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" />
+                <Script
+                    src="https://cat-bounce.com/" 
+                    strategy="lazyOnload"
+                    onLoad={() =>
+                        console.log(`script loaded correctly, cats are now falling `)
+                    }
+                />
       </Head>
 
       <main>
