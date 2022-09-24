@@ -1,9 +1,7 @@
 
 import Image from 'next/image'
 import Head from 'next/head'
-import Script from 'next/script'
 import Link from 'next/link'
-import Layout from '../../components/layout'
 
 
 const CatImage = () => (
@@ -18,8 +16,7 @@ const CatImage = () => (
 
 export default function FirstPost() {
     return (
-   
-        <Layout>
+        <div>
             <Head>
                 <title>First Post</title>
 
@@ -38,8 +35,7 @@ export default function FirstPost() {
 
             <h1>Here is cat</h1>
             <CatImage />
-
-        </Layout>
-                
+        </div>
+            
     ); 
 }
