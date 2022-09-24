@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import Script from 'next/script'
+import Link from 'next/link'
+import Layout from '../../components/layout'
 
 
 const CatImage = () => (
@@ -17,11 +19,11 @@ const CatImage = () => (
 export default function FirstPost() {
     return (
    
-        <div className = "">
-                <Head>
-                    <title>First Post</title>
+        <Layout>
+            <Head>
+                <title>First Post</title>
 
-                </Head>
+            </Head>
             <h1>First Post</h1>
 
             <h3>So excited!! *Kevin Hart's voice* </h3>
@@ -37,7 +39,7 @@ export default function FirstPost() {
             <h1>Here is cat</h1>
             <CatImage />
 
-        </div> 
-
+        </Layout>
+                
     ); 
 }

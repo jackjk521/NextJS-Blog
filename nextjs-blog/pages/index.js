@@ -10,16 +10,24 @@ export default function Home() {
         <title>Create Next App</title>
                 <link rel="icon" href="/favicon.ico" />
                 <Script
-                    src="https://cat-bounce.com/" 
+                    src="https://cat-bounce.com/"
                     strategy="lazyOnload"
                     onLoad={() =>
                         console.log(`script loaded correctly, cats are now falling `)
                     }
-                />
+                /> // won't be added
       </Head>
 
+        <Script
+            src="https://cat-bounce.com/"
+            strategy="lazyOnload"
+            onLoad={() =>
+                console.log(`script loaded correctly, cats are now falling `)
+            }
+        />
+
       <main>
-       
+        
         <h1 className="title">
             Read <Link href="/posts/first-post">this page!</Link>
         </h1>
