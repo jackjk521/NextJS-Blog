@@ -28,7 +28,7 @@ export default function Home() {
                 console.log(`script loaded correctly, cats are now falling `)
             }
             />
-            <Layout home>
+            <Layout home> //home is the prop
                 <Head>
                     <title>{siteTitle}</title>
                 </Head>

@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Jed Abner Chu';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'Next.js Sample Website'; {/* to pass a variable from one file to another via variable name*/ }
 
 export default function Layout({ children, home }) {
     return (
@@ -16,18 +16,21 @@ export default function Layout({ children, home }) {
                     name="description"
                     content="Learn how to build a personal website using Next.js"
                 />
-                {/*<meta*/}
-                {/*    property="og:image"*/}
-                {/*    content={`https://og-image.vercel.app/${encodeURI(*/}
-                {/*        siteTitle,*/}
-                {/*    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}*/}
-                {/*/>*/}
+                <meta
+                    property="og:image"
+                    content={`https://og-image.vercel.app/${encodeURI(
+                        siteTitle,
+                    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+                />
+                {/*meta tags (like og:image), which are used to describe a page's content*/}
+
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <header className={styles.header}>
+                {/*home is the prop used to know if the page is home or not (adjusts the sizes of the image and all the specified changes)*/}
                 {home ? (
-                    <>
+                    <>  
                         <Image
                             priority
                             src="/images/maine_coon.jpg"
