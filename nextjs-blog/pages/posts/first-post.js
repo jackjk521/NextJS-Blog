@@ -35,7 +35,6 @@ export default function FirstPost() {
 
             <h1>Here is cat</h1>
             <CatImage />
-        </div>
-            
+        </div> 
     ); 
 }
