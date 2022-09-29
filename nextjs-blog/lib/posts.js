@@ -4,6 +4,28 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'posts'); // root/posts (folder)
 
+export async function peopleApi() {
+    const url = "https://ghibliapi.herokuapp.com/people"
+    const ret = await fetch(url)
+    const retJson = await ret.json();
+    /*console.log(retJson);*/
+
+    const data = retJson.map((info) =>
+    {
+            return {
+                id: info.id,
+                name: info.name,
+                eye_color: info.eye_color,
+                hair_color: info.hair_color,
+            }
+    }); 
+
+    console.log(data);
+    return data;
+
+  
+}
+
 export function getSortedPostsData() {
     // Get file names under /posts
     const fileNames = fs.readdirSync(postsDirectory);

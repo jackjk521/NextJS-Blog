@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
-
+import causticImage from '../../public/images/caustic.jpg'
 
 const CatImage = () => (
     <Image
@@ -26,7 +26,7 @@ export default function FirstPost() {
             <h3>So excited!! *Kevin Hart's voice* </h3>
 
             <h3> Done laughing ? </h3>
-
+               
             <h2>
                 <Link href="/">
                     <a> Go back home now!! Bye bye</a>
@@ -34,7 +34,8 @@ export default function FirstPost() {
             </h2>
 
             <h1>Here is cat</h1>
-            <CatImage />
+                     <CatImage />
+                     <Image src={causticImage} alt= "Caustic" />
         </div> 
     ); 
 }

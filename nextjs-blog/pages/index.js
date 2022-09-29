@@ -3,16 +3,32 @@ import Link from 'next/link';
 import Script from 'next/script'
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsData, peopleApi } from '../lib/posts';
+
 
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData();
+
+   /* const allPostsData = getSortedPostsData();*/
+    getSortedPostsData();
+    const allPostsData = await peopleApi();
     return {
         props: {
             allPostsData,
         },
     };
 }
+
+/*export async function getServerSideProps() { *//*tested and works*//*
+
+    *//*const allPostsData = getSortedPostsData();*//*
+    getSortedPostsData();
+    const allPostsData = await peopleApi();
+    return {
+        props: {
+            allPostsData,
+        },
+    };
+}*/
 export default function Home({allPostsData}) {
  
     return (
@@ -39,7 +55,7 @@ export default function Home({allPostsData}) {
             />
 
 
-            <Layout home> //home is the prop
+            <Layout home> {/*home is the prop*/}
                 <Head>
                     <title>{siteTitle}</title>
                 </Head>
@@ -54,15 +70,16 @@ export default function Home({allPostsData}) {
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                     <h2 className={utilStyles.headingLg}>Blog</h2>
                     <ul className={utilStyles.list}>
-                        {allPostsData.map(({ id, date, title }) => (
-                            <li className={utilStyles.listItem} key={id}>
-                                {title}
-                                <br />
-                                {id}
-                                <br />
-                                {date}
-                            </li>
-                        ))}
+                        {allPostsData.map(({ id, name, eye_color, hair_color }) => {
+                                return (
+                                    <li className={utilStyles.listItem} key={id}>
+                                        <h4> ID: {id} </h4>
+                                        <h4> Name: {name} </h4>
+                                        <h4> Eye Color: {eye_color} </h4>
+                                        <h4> Hair Color: {hair_color} </h4>
+                                    </li>  
+                                 )
+                        })}
                     </ul>
                 </section>
             </Layout>
