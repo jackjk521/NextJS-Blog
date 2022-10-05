@@ -33,9 +33,18 @@ export default function FirstPost() {
                 </Link>
             </h2>
 
+            <form action="/api/first_postHandler" method="post">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" />
+                <label for="age">Age: </label>
+                <input type="number" id="age" name="age" />
+                <button type="submit">Submit</button>
+            </form>
+
             <h1>Here is cat</h1>
-                     <CatImage />
-                     <Image src={causticImage} alt= "Caustic" />
+            <CatImage />
+            <Image src={causticImage} alt= "Caustic" />
+
         </div> 
     ); 
 }
